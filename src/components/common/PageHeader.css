@@ -1,0 +1,144 @@
+/* ════════════════════════════════════════════════
+   PageHeader — shared across all inner pages
+   ════════════════════════════════════════════════ */
+.page-header-root {
+    background: #ffffff;
+    border-bottom: 1px solid #e8ecf5;
+    padding: 40px 20px 32px;
+}
+
+.page-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 16px;
+    border-left: 4px solid #c0392b;
+}
+
+.page-header-eyebrow {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 8px;
+}
+
+.page-header-title {
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 900;
+    color: #111827;
+    margin: 0 0 10px;
+    line-height: 1.15;
+}
+
+.page-header-bar {
+    width: 36px;
+    height: 3px;
+    background: linear-gradient(to right, #1a1f5e, #c0392b);
+    border-radius: 99px;
+    margin-bottom: 10px;
+}
+
+.page-header-desc {
+    font-size: 0.88rem;
+    color: #6b7280;
+    margin: 0;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* ── Inner page shared layout ── */
+.page-body {
+    background: #f8f9fc;
+    min-height: 60vh;
+}
+
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+
+.page-container--narrow {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 20px;
+}
+
+/* ── Shared section heading inside pages ── */
+.page-section-eyebrow {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c0392b;
+    margin-bottom: 6px;
+}
+
+.page-section-heading {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 4px;
+}
+
+.page-section-bar {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: linear-gradient(to right, #1a1f5e, #c0392b);
+    border-radius: 99px;
+    margin-bottom: 20px;
+}
+
+/* ── Shared card style ── */
+.page-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.page-card:hover {
+    box-shadow: 0 4px 20px rgba(26,31,94,0.08);
+    border-color: #d1d9f0;
+}
+
+/* ── Shared button style ── */
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn--primary {
+    background: #c0392b;
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(192,57,43,0.3);
+}
+.page-btn--primary:hover { background: #a93226; transform: translateY(-1px); }
+
+.page-btn--navy {
+    background: #1a1f5e;
+    color: #ffffff;
+}
+.page-btn--navy:hover { background: #141849; transform: translateY(-1px); }
+
+.page-btn--outline {
+    background: transparent;
+    color: #1a1f5e;
+    border: 1.5px solid #1a1f5e;
+}
+.page-btn--outline:hover { background: #1a1f5e; color: #ffffff; }

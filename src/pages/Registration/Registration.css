@@ -1,0 +1,373 @@
+/* ════════════════════════════════════════════
+   Registration Page Styles
+   ════════════════════════════════════════════ */
+
+/* ── Important Dates Block ── */
+.reg-dates-section {
+    background: #1a1f5e;
+    border-radius: 16px;
+    padding: 32px 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Section Cards ── */
+.reg-section-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 640px) {
+    .reg-section-card {
+        padding: 24px 20px;
+    }
+}
+
+.reg-section-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* ── Alert Box ── */
+.reg-alert-box {
+    display: flex;
+    gap: 16px;
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid rgba(192, 57, 43, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 32px;
+    align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+    .reg-alert-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.reg-alert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(192, 57, 43, 0.1);
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.reg-alert-content {
+    min-width: 0;
+}
+
+.reg-alert-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #c0392b;
+    margin: 0 0 4px;
+}
+
+.reg-alert-desc {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ── Registration Table ── */
+.reg-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    margin-bottom: 28px;
+    width: 100%;
+}
+
+.registerTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.registerTable th {
+    background: #1a1f5e;
+    color: #ffffff;
+    padding: 16px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.registerTable th.text-center {
+    text-align: center;
+}
+
+.registerTable td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.88rem;
+    color: #4b5563;
+}
+
+.registerTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.registerTable tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.table-col-particulars {
+    width: 40%;
+}
+
+.table-col-ind, .table-col-int {
+    width: 30%;
+}
+
+.fee-category {
+    font-weight: 700;
+    color: #111827;
+}
+
+.fee-charge {
+    font-weight: 800;
+    font-size: 0.92rem;
+}
+
+.fee-charge--indian {
+    color: #1a1f5e;
+}
+
+.fee-charge--international {
+    color: #c0392b;
+}
+
+/* ── CTA Button ── */
+.reg-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.reg-pay-btn {
+    padding: 12px 32px;
+    font-size: 0.8rem;
+}
+
+.reg-pay-btn--disabled {
+    background: #e5e7eb;
+    color: #9ca3af;
+    border: 1px solid #d1d5db;
+    cursor: not-allowed;
+}
+
+/* ── Payment Grid ── */
+.reg-payment-card {
+    margin-bottom: 0;
+}
+
+.reg-payment-grid {
+    display: grid;
+    grid-template-columns: 3.2fr 1.8fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+@media (max-width: 860px) {
+    .reg-payment-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+.payment-details-panel {
+    background: linear-gradient(135deg, rgba(26, 31, 94, 0.02) 0%, rgba(192, 57, 43, 0.02) 100%);
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .payment-details-panel {
+        padding: 20px;
+    }
+}
+
+.payment-panel-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1f5e;
+    margin: 0 0 12px;
+}
+
+.payment-panel-desc {
+    font-size: 0.88rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+/* ── Gateway Target Box ── */
+.gateway-target-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.gateway-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #eef2ff;
+    color: #1a1f5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.gateway-target-details {
+    min-width: 0;
+}
+
+.gateway-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #9ca3af;
+    margin-bottom: 2px;
+}
+
+.gateway-link {
+    font-size: 0.88rem;
+    color: #1a1f5e;
+    text-decoration: underline;
+    font-weight: 700;
+}
+.gateway-link:hover {
+    color: #c0392b;
+}
+
+.gateway-status {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.gateway-status--closed {
+    color: #c0392b;
+}
+
+/* ── QR Code Panel ── */
+.payment-qr-panel {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.qr-img-wrap {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    max-width: 180px;
+    width: 100%;
+    margin-bottom: 16px;
+    transition: filter 0.3s;
+}
+
+.qr-img-wrap--blur {
+    filter: blur(4px);
+    pointer-events: none;
+    select: none;
+}
+
+.qr-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.qr-instructions {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #6b7280;
+    line-height: 1.45;
+    max-width: 220px;
+}
+
+.qr-instructions--disabled {
+    color: #9ca3af;
+}
+
+/* ── Lock Overlay ── */
+.qr-lock-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.qr-lock-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #c0392b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.qr-lock-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(255, 255, 255, 0.95);
+    color: #111827;
+    padding: 4px 12px;
+    border-radius: 99px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

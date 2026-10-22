@@ -1,0 +1,65 @@
+    html,body {
+        margin:0;
+        padding:0;
+    }
+    .App {
+        text-align: center;
+    }
+
+    .App-logo {
+        height: 40vmin;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .App-logo {
+            animation: App-logo-spin infinite 20s linear;
+        }
+    }
+
+    .App-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+
+    .App-link {
+        color: #61dafb;
+    }
+
+    @keyframes App-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .bgImg {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100%;
+        background-position: center;
+        /* background: rgb(32, 0, 60);
+        background: linear-gradient(137deg, rgba(32, 0, 60, 1) 0%, rgba(49, 1, 101, 0.9192051820728291) 51%, rgba(135, 0, 109, 0.7035189075630253) 100%), url('img/medicaps_cse1.jpg'); */
+        background-size: cover;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .WebContainer {
+        width: 100%;
+        min-width: 1000px;
+        height: auto;
+    }
+    

@@ -1,0 +1,252 @@
+.conf-nav-link {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+}
+
+.conf-nav-link1 {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.conf-nav-link:after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    background: #a21d2e;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    left: 50%;
+}
+
+.conf-nav-link:hover:after,
+.conf-nav-active:after {
+    width: 100%;
+    left: 0;
+}
+
+.conf-btn-primary {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.conf-btn-primary:hover { opacity: 0.88; }
+
+.conf-btn-secondary {
+    background-color: transparent;
+    color: #1a1f5e;
+    border: 2px solid #1a1f5e;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.conf-btn-secondary:hover {
+    background-color: #1a1f5e;
+    color: white;
+}
+
+.conf-btn-accent {
+    background-color: #1a1f5e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.conf-btn-accent:hover { opacity: 0.88; }
+
+/* ── New unified nav buttons ── */
+.nav-btn {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+}
+
+/* Primary = solid conference red */
+.nav-btn--primary {
+    background: #c0392b;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(192,57,43,0.35);
+}
+.nav-btn--primary:hover {
+    background: #a93226;
+    box-shadow: 0 4px 14px rgba(192,57,43,0.45);
+}
+
+/* Outline = navy border, transparent fill */
+.nav-btn--outline {
+    background: transparent;
+    color: #1a1f5e;
+    border: 1.5px solid #1a1f5e;
+}
+.nav-btn--outline:hover {
+    background: #1a1f5e;
+    color: #ffffff;
+}
+
+/* Ghost = subtle, low emphasis */
+.nav-btn--ghost {
+    background: transparent;
+    color: #6b7280;
+    border: 1.5px solid #d1d5db;
+}
+.nav-btn--ghost:hover {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #9ca3af;
+}
+
+.dispNone {
+    display: none;
+}
+
+.iconclrSocial {
+    color: white;
+}
+
+.iconclrSocial1 {
+    color: #016698;
+}
+
+.navClass {
+    z-index: 100;
+}
+
+.navClass1 {
+    z-index: 30;
+}
+
+.leftAlign {
+    left: 50%;
+}
+
+.bgimg3 {
+    background-image: linear-gradient(137.59deg, rgb(253, 27, 192) 17.41%, rgb(248, 237, 0) 98.07%);
+}
+
+.btnclr {
+    color: white;
+}
+
+.iconclr2 {
+    color: white;
+}
+
+.medicapsLogo {
+    width: 170px;
+}
+
+/* Mobile navbar buttons gap */
+.mobile-nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (min-width: 1024px) {
+    .dispNone2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .bgimg3 {
+        background-color: #00033D;
+        background-image: none;
+        color: white;
+    }
+
+    .sideNav {
+        background: #016698;
+    }
+
+    .iconclrSocial1 {
+        color: #00033D;
+    }
+
+    .respCss {
+        text-align: center;
+    }
+
+    /* dispNone1 REMOVED — buttons ab mobile pe bhi dikhenge */
+
+    .medicapsLogo {
+        width: 120px;
+        margin-right: 2rem;
+    }
+
+    .iconclrSocial1 {
+        color: white;
+    }
+}
+
+@media screen and (min-width:1535px) and (max-width:1560px) {
+    .column {
+        width: 50%;
+    }
+
+    .supHeading {
+        font-size: 3.2rem;
+    }
+
+    .linkText {
+        font-size: 0.98rem;
+    }
+}
+
+@media screen and (max-width: 1535px) {
+    .column {
+        width: 50%;
+    }
+
+    .supHeading {
+        font-size: 2.50rem;
+    }
+
+    .linkText {
+        font-size: 0.75rem;
+    }
+
+    .numHeading {
+        font-size: 2.5rem;
+    }
+}
+
+.headingMain {
+    background: -webkit-linear-gradient(135deg, #1a1f5e, #c0392b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradientColor {
+    background-image: linear-gradient(to right, #293985, #a21d2e);
+}
+
+.gradientHeading {
+    font-size: 40px;
+    background: -webkit-linear-gradient(#293985, #a21d2e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

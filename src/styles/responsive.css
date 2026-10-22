@@ -1,0 +1,77 @@
+/* ============================================================
+   IC-AISET-2027 Conference - Responsive Styles
+   Media queries consolidated from all components
+   ============================================================ */
+
+/* --- Mobile: <= 640px --- */
+@media (max-width: 640px) {
+  .noneDisp1 {
+    display: none !important;
+  }
+
+  .noneDisp2 {
+    display: flex !important;
+  }
+
+  .dispNone1 {
+    display: none !important;
+  }
+
+  .dispNone2 {
+    display: block !important;
+  }
+
+  .committee-img {
+    width: 90px;
+    height: auto;
+  }
+
+  .committee-name {
+    font-size: 0.8rem;
+  }
+
+  .committee-designation {
+    font-size: 0.7rem;
+  }
+
+  .registerTable {
+    width: 100%;
+    font-size: 0.75rem;
+  }
+
+  .registerTable .highlight,
+  .registerTable .highlight1 {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Tablet: 641px - 1024px --- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .noneDisp1 {
+    display: flex !important;
+  }
+
+  .noneDisp2 {
+    display: none !important;
+  }
+}
+
+/* --- Desktop: > 1024px --- */
+@media (min-width: 1025px) {
+  .noneDisp1 {
+    display: flex !important;
+  }
+
+  .noneDisp2 {
+    display: none !important;
+  }
+
+  .dispNone1 {
+    display: block !important;
+  }
+
+  .dispNone2 {
+    display: none !important;
+  }
+}

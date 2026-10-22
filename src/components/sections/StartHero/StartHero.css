@@ -1,0 +1,763 @@
+/* ════════════════════════════════════════════
+   StartHero — Split-panel, professional light theme
+   Palette matches home page:
+     #1a1f5e  deep navy
+     #c0392b  conference red
+     #f0f2f8  light BG
+   ════════════════════════════════════════════ */
+
+/* ── Root ── */
+.hero-root {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+}
+
+/* ════════════════════════════════════════════
+   Announcement Ticker
+   ════════════════════════════════════════════ */
+.hero-ticker {
+    display: flex;
+    align-items: center;
+    background: #f0f2f8;
+    border-bottom: 1px solid #e2e6f0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 38px;
+}
+
+.hero-ticker-label {
+    flex-shrink: 0;
+    background: #1a1f5e;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+.hero-ticker-track-wrap {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+}
+
+.hero-ticker-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.hero-ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.hero-ticker-icon { color: #1a1f5e; font-size: 0.65rem; }
+.hero-ticker-date { color: #c0392b; font-weight: 800; }
+
+/* ── Seamless single-track marquee ──
+   The list is rendered TWICE in the JSX (original + duplicate).
+   We animate from 0% to -50% so the duplicate set lines up exactly
+   where the original ended — no overlap, no double-text, no gap. */
+.hero-ticker-track {
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+}
+
+.hero-ticker-track-wrap:hover .hero-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0%); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ════════════════════════════════════════════
+   Split Layout
+   ════════════════════════════════════════════ */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+}
+
+@media (max-width: 860px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+}
+
+/* ════════════════════════════════════════════
+   Left Panel — Light
+   ════════════════════════════════════════════ */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 52px 48px 52px 52px;
+    background: #ffffff;
+    border-right: 1px solid #e8ecf5;
+}
+
+@media (max-width: 1100px) { .hero-left { padding: 44px 32px; } }
+@media (max-width: 860px)  { .hero-left { padding: 40px 20px; border-right: none; border-bottom: 1px solid #e8ecf5; } }
+
+/* Top label row */
+.hero-left-labels {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both;
+}
+
+.hero-org-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1f5e;
+    background: #eef1fa;
+    border: 1px solid #d1d9f0;
+    border-radius: 99px;
+    padding: 5px 12px;
+}
+
+.hero-edition-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #c0392b;
+    border-radius: 99px;
+    padding: 5px 12px;
+}
+
+.hero-pub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #016698;
+    background: #e6f3ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 99px;
+    padding: 5px 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.hero-pub-badge:hover {
+    background: #016698;
+    color: #ffffff;
+    border-color: #016698;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(1, 102, 152, 0.25);
+}
+
+/* Main heading */
+.hero-title {
+    font-size: clamp(1.3rem, 2.8vw, 2rem);
+    font-weight: 900;
+    color: #111827;
+    line-height: 1.25;
+    margin: 0 0 6px;
+    animation: fadeUp 0.6s ease 0.08s both;
+}
+
+/* Abbreviation */
+.hero-abbr {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1a1f5e;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    animation: fadeUp 0.6s ease 0.14s both;
+}
+
+/* Info chips row */
+.hero-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.hero-info-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #374151;
+    background: #f0f2f8;
+    border: 1px solid #d4d9eb;
+    border-radius: 8px;
+    padding: 7px 14px;
+}
+
+.hero-info-chip i { color: #c0392b; font-size: 0.8rem; }
+
+/* Divider */
+.hero-left-divider {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, #1a1f5e, #c0392b);
+    border-radius: 99px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.24s both;
+}
+
+/* Action buttons */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease 0.3s both;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.hero-btn--primary {
+    background: #c0392b;
+    color: #ffffff;
+    box-shadow: 0 3px 12px rgba(192,57,43,0.35);
+}
+.hero-btn--primary:hover {
+    background: #a93226;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(192,57,43,0.45);
+}
+
+.hero-btn--secondary {
+    background: transparent;
+    color: #1a1f5e;
+    border: 1.5px solid #1a1f5e;
+}
+.hero-btn--secondary:hover {
+    background: #1a1f5e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.hero-btn--ghost {
+    background: transparent;
+    color: #9ca3af;
+    border: 1.5px solid #e5e7eb;
+}
+.hero-btn--ghost:hover {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+/* IEEE note */
+.hero-ieee-note {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    margin: 0;
+    animation: fadeUp 0.6s ease 0.36s both;
+}
+.hero-ieee-note i { color: #c0392b; }
+
+/* ════════════════════════════════════════════
+   Right Panel — Photo
+   ════════════════════════════════════════════ */
+.hero-right {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 860px) {
+    .hero-right { min-height: 280px; }
+}
+
+.hero-photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+}
+
+@media (max-width: 860px) { .hero-photo-wrap { min-height: 280px; } }
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+.hero-photo-wrap:hover .hero-photo { transform: scale(1.03); }
+
+.hero-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26,31,94,0.45) 0%,
+        rgba(0,0,0,0.2) 60%,
+        rgba(192,57,43,0.15) 100%
+    );
+    pointer-events: none;
+}
+
+/* Floating stat cards */
+.hero-float-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    animation: fadeUp 0.7s ease 0.5s both;
+}
+
+.hero-float-card--tl { top: 24px; left: 24px; }
+.hero-float-card--br { bottom: 24px; right: 24px; }
+
+.hero-float-num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #1a1f5e;
+    line-height: 1;
+}
+
+.hero-float-lbl {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* ════════════════════════════════════════════
+   Animations
+   ════════════════════════════════════════════ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Legacy ── */
+.iconclr { color: white; text-align: center; }
+   /* ════════════════════════════════════════════
+   StartHero — Split-panel, professional light theme
+   Palette matches home page:
+     #1a1f5e  deep navy
+     #c0392b  conference red
+     #f0f2f8  light BG
+   ════════════════════════════════════════════ */
+
+/* ── Root ── */
+.hero-root {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+}
+
+/* ════════════════════════════════════════════
+   Announcement Ticker
+   ════════════════════════════════════════════ */
+.hero-ticker {
+    display: flex;
+    align-items: center;
+    background: #f0f2f8;
+    border-bottom: 1px solid #e2e6f0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 38px;
+}
+
+.hero-ticker-label {
+    flex-shrink: 0;
+    background: #1a1f5e;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+.hero-ticker-track-wrap {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+}
+
+.hero-ticker-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+}
+
+.hero-ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 40px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.hero-ticker-icon { color: #1a1f5e; font-size: 0.65rem; }
+.hero-ticker-date { color: #c0392b; font-weight: 800; }
+
+/* ── Seamless single-track marquee ──
+   The list is rendered TWICE in the JSX (original + duplicate).
+   We animate from 0% to -50% so the duplicate set lines up exactly
+   where the original ended — no overlap, no double-text, no gap. */
+.hero-ticker-track {
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+}
+
+.hero-ticker-track-wrap:hover .hero-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0%); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ════════════════════════════════════════════
+   Split Layout
+   ════════════════════════════════════════════ */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+}
+
+@media (max-width: 860px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+}
+
+/* ════════════════════════════════════════════
+   Left Panel — Light
+   ════════════════════════════════════════════ */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 52px 48px 52px 52px;
+    background: #ffffff;
+    border-right: 1px solid #e8ecf5;
+}
+
+@media (max-width: 1100px) { .hero-left { padding: 44px 32px; } }
+@media (max-width: 860px)  { .hero-left { padding: 40px 20px; border-right: none; border-bottom: 1px solid #e8ecf5; } }
+
+/* Top label row */
+.hero-left-labels {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both;
+}
+
+.hero-org-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a1f5e;
+    background: #eef1fa;
+    border: 1px solid #d1d9f0;
+    border-radius: 99px;
+    padding: 5px 12px;
+}
+
+.hero-edition-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #c0392b;
+    border-radius: 99px;
+    padding: 5px 12px;
+}
+
+/* Main heading */
+.hero-title {
+    font-size: clamp(1.3rem, 2.8vw, 2rem);
+    font-weight: 900;
+    color: #111827;
+    line-height: 1.25;
+    margin: 0 0 6px;
+    animation: fadeUp 0.6s ease 0.08s both;
+}
+
+/* Abbreviation */
+.hero-abbr {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1a1f5e;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    animation: fadeUp 0.6s ease 0.14s both;
+}
+
+/* Info chips row */
+.hero-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.hero-info-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #374151;
+    background: #f0f2f8;
+    border: 1px solid #d4d9eb;
+    border-radius: 8px;
+    padding: 7px 14px;
+}
+
+.hero-info-chip i { color: #c0392b; font-size: 0.8rem; }
+
+/* Divider */
+.hero-left-divider {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(to right, #1a1f5e, #c0392b);
+    border-radius: 99px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.24s both;
+}
+
+/* Action buttons */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease 0.3s both;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.hero-btn--primary {
+    background: #c0392b;
+    color: #ffffff;
+    box-shadow: 0 3px 12px rgba(192,57,43,0.35);
+}
+.hero-btn--primary:hover {
+    background: #a93226;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(192,57,43,0.45);
+}
+
+.hero-btn--secondary {
+    background: transparent;
+    color: #1a1f5e;
+    border: 1.5px solid #1a1f5e;
+}
+.hero-btn--secondary:hover {
+    background: #1a1f5e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.hero-btn--ghost {
+    background: transparent;
+    color: #9ca3af;
+    border: 1.5px solid #e5e7eb;
+}
+.hero-btn--ghost:hover {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+/* IEEE note */
+.hero-ieee-note {
+    font-size: 0.72rem;
+    color: #9ca3af;
+    margin: 0;
+    animation: fadeUp 0.6s ease 0.36s both;
+}
+.hero-ieee-note i { color: #c0392b; }
+
+/* ════════════════════════════════════════════
+   Right Panel — Photo
+   ════════════════════════════════════════════ */
+.hero-right {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 860px) {
+    .hero-right { min-height: 280px; }
+}
+
+.hero-photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+}
+
+@media (max-width: 860px) { .hero-photo-wrap { min-height: 280px; } }
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+.hero-photo-wrap:hover .hero-photo { transform: scale(1.03); }
+
+.hero-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26,31,94,0.45) 0%,
+        rgba(0,0,0,0.2) 60%,
+        rgba(192,57,43,0.15) 100%
+    );
+    pointer-events: none;
+}
+
+/* Floating stat cards */
+.hero-float-card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    animation: fadeUp 0.7s ease 0.5s both;
+}
+
+.hero-float-card--tl { top: 24px; left: 24px; }
+.hero-float-card--br { bottom: 24px; right: 24px; }
+
+.hero-float-num {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #1a1f5e;
+    line-height: 1;
+}
+
+.hero-float-lbl {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+}
+
+/* ════════════════════════════════════════════
+   Animations
+   ════════════════════════════════════════════ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Legacy ── */
+.iconclr { color: white; text-align: center; }
+   

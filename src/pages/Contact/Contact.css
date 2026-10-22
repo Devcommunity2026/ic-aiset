@@ -1,0 +1,88 @@
+/* Contact page styles */
+
+.contact-email-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #1a1f5e;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin-bottom: 28px;
+}
+
+.contact-email-icon {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: #eef1fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1f5e;
+    font-size: 1.2rem;
+}
+
+.contact-email-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #374151;
+    margin: 0 0 6px;
+}
+
+.contact-email-link {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1a1f5e;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 4px;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+.contact-email-link:hover { color: #c0392b; }
+
+.contact-email-note {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) {
+    .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-card { display: flex; flex-direction: column; }
+
+.contact-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 12px;
+}
+
+.contact-phone-row {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1a1f5e;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.contact-phone:hover { color: #c0392b; }
+.contact-phone i { font-size: 0.7rem; }

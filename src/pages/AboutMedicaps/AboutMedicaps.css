@@ -1,0 +1,104 @@
+/* AboutMedicaps page styles */
+.about-intro-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 40px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 860px) {
+    .about-intro-row { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+}
+
+.about-intro-text { min-width: 0; }
+
+.about-body-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 14px;
+}
+
+.about-intro-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.about-gallery-img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+.about-gallery-img:hover { transform: scale(1.03); }
+
+.about-split-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 40px;
+    margin-bottom: 24px;
+}
+.about-split-card--reverse { direction: rtl; }
+.about-split-card--reverse > * { direction: ltr; }
+
+@media (max-width: 860px) {
+    .about-split-card { grid-template-columns: 1fr; padding: 28px 20px; gap: 28px; }
+    .about-split-card--reverse { direction: ltr; }
+}
+
+.about-split-text { min-width: 0; }
+.about-split-img { min-width: 0; }
+
+.about-feature-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.about-mission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.about-mission-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.88rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.about-mission-dot {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff0ee;
+    border: 1px solid #fbc7c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0392b;
+    font-size: 0.55rem;
+    margin-top: 2px;
+}
