@@ -240,3 +240,111 @@
   color: #1a1f5e;
   font-weight: 700;
 }
+
+/* ════════════════════════════════════════════
+   Announced Soon Card
+   ════════════════════════════════════════════ */
+.committee-announced-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border: 1.5px solid #cfe2fe;
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px -5px rgba(26, 31, 94, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.committee-announced-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c0392b, #1a1f5e, #016698);
+}
+
+.committee-announced-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.committee-announced-title {
+  font-size: clamp(1.4rem, 3.2vw, 2.2rem);
+  font-weight: 900;
+  color: #1a1f5e;
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.committee-announced-desc {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: #4b5563;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  line-height: 1.65;
+}
+
+.committee-roles-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 860px;
+  margin: 0 auto 32px;
+}
+
+.committee-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.committee-contact-box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px dashed #93c5fd;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.committee-email-link {
+  color: #016698;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.committee-email-link:hover {
+  text-decoration: underline;
+  color: #1a1f5e;
+}

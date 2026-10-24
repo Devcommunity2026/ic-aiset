@@ -9,13 +9,13 @@ import medicapsLogo from '../assets/images/branding/MedicapsNewLogo.png';
 import medicaps25 from '../assets/images/branding/medi25year.jpg';
 import medicapsLogo1 from '../assets/images/branding/medicapslogo1.png';
 import springerLogo from '../assets/images/branding/springer.png';
-import ieeelogo2 from '../assets/images/branding/ieeelogo2.png';
 import tarumtLogo from '../assets/images/branding/tarumt-logo.png';
-import ieeeMPSection from '../assets/images/branding/ieeeMPSection.png';
 
-// --- IC-AISET-2027 Conference Images ---
-import heroAisep2027 from '../assets/images/branding/hero_aisep2027.jpg';
-import scopeAisep2027 from '../assets/images/branding/scope_aisep2027.jpg';
+// --- IC-AISET-2027 Authentic Conference Images (Front UI) ---
+import confProceedingsRelease from '../assets/images/branding/conference_proceedings_release.jpg';
+import confKeynoteFelicitation from '../assets/images/branding/conference_keynote_felicitation.jpg';
+import confDelegatesGroup from '../assets/images/branding/conference_delegates_group.jpg';
+import confBookUnveiling from '../assets/images/branding/conference_book_unveiling.jpg';
 
 // --- Past Conference Images ---
 import pastConference1 from '../assets/images/branding/CONFERENCEICANI.jpeg';
@@ -66,15 +66,22 @@ export const assets = {
   medicaps25,
   medicapsLogo1,
   springerLogo,
-  ieeelogo2,
   tarumtLogo,
-  ieeeMPSection,
 
-  // Conference images
-  heroAisep2027,
-  scopeAisep2027,
-  scopeImage: scopeAisep2027,
+  // Authentic Conference photos
+  confProceedingsRelease,
+  confKeynoteFelicitation,
+  confDelegatesGroup,
+  confBookUnveiling,
+
+  // Front UI mappings (Replaces AI-generated images)
+  heroPhoto: confDelegatesGroup,
+  heroAisep2027: confDelegatesGroup,
+  scopeImage: confProceedingsRelease,
+  scopeAisep2027: confProceedingsRelease,
   scopeImageOld,
+
+  // Past conferences
   pastConference1,
   pastConference2,
   pastConference3,
