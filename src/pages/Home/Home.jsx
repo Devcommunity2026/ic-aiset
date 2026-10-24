@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import Nav from '../../components/layout/Navbar/Navbar'
 import Footer from '../../components/layout/Footer/Footer'
@@ -15,7 +15,6 @@ import {
 import { assets } from '../../constants/assets';
 import { ROUTES } from '../../constants/routes';
 
-
 const QUICK_LINKS = [
     { to: ROUTES.COMMITTEES, icon: 'fa-users-gear', title: 'Committees', desc: 'University leadership, academic advisory council and organizers.' },
     { to: ROUTES.ACCEPTED_PAPERS, icon: 'fa-file-lines', title: 'Paper Guidelines', desc: 'APA 7th Edition style, originality rules and submission checklist.' },
@@ -23,8 +22,36 @@ const QUICK_LINKS = [
     { to: ROUTES.VENUE, icon: 'fa-location-dot', title: 'Venue & Mode', desc: 'Campus location in Indore and hybrid session details.' },
 ];
 
+const CONFERENCE_GALLERY = [
+    {
+        src: assets.confDelegatesGroup,
+        tag: 'Campus Gathering',
+        title: 'Delegates, Faculty & Scholars at Medi-Caps Campus',
+        desc: 'Distinguished participants, university leadership, and international scholars gathered at the Faculty of Management Studies, Medi-Caps University.',
+    },
+    {
+        src: assets.confProceedingsRelease,
+        tag: 'Proceedings Launch',
+        title: 'Official Release of Conference Proceedings',
+        desc: 'Formal unveiling of peer-reviewed management research proceedings and publication volume by university leadership and dignitaries.',
+    },
+    {
+        src: assets.confKeynoteFelicitation,
+        tag: 'Keynote & Honors',
+        title: 'Keynote Speaker Felicitation & Citation Ceremony',
+        desc: 'Presenting formal honors and conference citation to distinguished international keynote speaker on stage.',
+    },
+    {
+        src: assets.confBookUnveiling,
+        tag: 'Inaugural Session',
+        title: 'Conference Proceedings Publication Unveiling',
+        desc: 'Esteemed dignitaries and faculty holding up the officially published proceedings of the management conference.',
+    },
+];
+
 const HomePage = () => {
     const { setCount } = useCount();
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         const func = () => setCount(prev => prev + 1);
@@ -81,7 +108,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="hp-scope-img-wrap">
-                        <img className="hp-scope-img" src={assets.scopeImage} alt="IC-AISET-2027 Conference Scope" />
+                        <img className="hp-scope-img" src={assets.scopeImage} alt="IC-AISET-2027 Conference Scope & Proceedings Release" />
                         <div className="hp-scope-img-badge">
                             <span className="hp-scope-badge-num bodyFont2">2027</span>
                             <span className="hp-scope-badge-txt">Hybrid</span>
@@ -182,7 +209,43 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ════ 5. PREVIOUS CONFERENCES ════ */}
+            {/* ════ 5. CONFERENCE GLIMPSES & AUTHENTIC HIGHLIGHTS ════ */}
+            <section className="hp-gallery-section" id="gallery">
+                <div className="hp-container">
+                    <span className="hp-eyebrow">Visual Highlights</span>
+                    <h2 className="hp-heading bodyFont2">Conference Glimpses &amp; Moments</h2>
+                    <div className="hp-heading-bar" />
+                    <p style={{ color: '#4b5563', fontSize: '0.92rem', maxWidth: '720px', margin: '-10px 0 24px', lineHeight: 1.6 }}>
+                        Explore authentic moments from our international management conferences hosted by Faculty of Management Studies, Medi-Caps University — bringing together eminent researchers, global delegates, and visionary leaders.
+                    </p>
+
+                    <div className="hp-gallery-grid">
+                        {CONFERENCE_GALLERY.map((item, idx) => (
+                            <div className="hp-gallery-card" key={idx}>
+                                <div 
+                                    className="hp-gallery-img-wrap"
+                                    onClick={() => setSelectedImage(item)}
+                                    title="Click to view full photo"
+                                >
+                                    <img 
+                                        src={item.src} 
+                                        alt={item.title} 
+                                        className="hp-gallery-img" 
+                                        loading="lazy" 
+                                    />
+                                    <span className="hp-gallery-tag">{item.tag}</span>
+                                </div>
+                                <div className="hp-gallery-body">
+                                    <h3 className="hp-gallery-title font-heading">{item.title}</h3>
+                                    <p className="hp-gallery-desc">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ════ 6. PREVIOUS CONFERENCES ════ */}
             <section className="hp-prev">
                 <div className="hp-container">
                     <span className="hp-eyebrow">Legacy</span>
@@ -202,7 +265,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ════ 6. PAPER SUBMISSION CTA ════ */}
+            {/* ════ 7. PAPER SUBMISSION CTA ════ */}
             <section className="hp-cta">
                 <div className="hp-container hp-cta-inner">
                     <div className="hp-cta-text">
@@ -227,6 +290,30 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Lightbox Modal */}
+            {selectedImage && (
+                <div className="hp-lightbox-overlay" onClick={() => setSelectedImage(null)}>
+                    <div className="hp-lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <button 
+                            className="hp-lightbox-close" 
+                            onClick={() => setSelectedImage(null)}
+                            aria-label="Close photo"
+                        >
+                            <i className="fa-solid fa-xmark" />
+                        </button>
+                        <img 
+                            src={selectedImage.src} 
+                            alt={selectedImage.title} 
+                            className="hp-lightbox-img" 
+                        />
+                        <div className="hp-lightbox-info">
+                            <span className="hp-lightbox-caption">{selectedImage.title}</span>
+                            <span className="hp-gallery-tag" style={{ position: 'static' }}>{selectedImage.tag}</span>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <Footer />
         </>

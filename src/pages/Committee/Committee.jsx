@@ -19,6 +19,21 @@ const ProgrameComitte = memo(() => {
     return arr
   }
 
+  const hasPhotoMembers = Boolean(
+    (committeeData.chiefPatron && committeeData.chiefPatron.length > 0) ||
+    (committeeData.patron && committeeData.patron.length > 0) ||
+    (committeeData.generalChair && committeeData.generalChair.length > 0) ||
+    (committeeData.generalCoChairs && committeeData.generalCoChairs.length > 0) ||
+    (committeeData.advisoryCouncil && committeeData.advisoryCouncil.length > 0)
+  );
+
+  const hasTextMembers = Boolean(
+    (programChair && programChair.length > 0) ||
+    (workingCommittee && workingCommittee.length > 0) ||
+    (internationalAdvisoryCommittee1 && internationalAdvisoryCommittee1.length > 0) ||
+    (internationalAdvisoryCommittee2 && internationalAdvisoryCommittee2.length > 0)
+  );
+
   return (
     <>
       <Nav />
@@ -33,44 +48,65 @@ const ProgrameComitte = memo(() => {
         <div className="page-container">
 
           {/* ── PHOTO SECTIONS ── */}
+          {hasPhotoMembers && (
+            <>
+              {/* Chief Patron */}
+              <CommitteeSection title="Chief Patron" members={committeeData.chiefPatron} />
 
-          {/* Chief Patron */}
-          <CommitteeSection title="Chief Patron" members={committeeData.chiefPatron} />
+              {/* Patron */}
+              <CommitteeSection title="Patron" members={committeeData.patron} />
 
-          {/* Patron */}
-          <CommitteeSection title="Patron" members={committeeData.patron} />
+              {/* General Chair */}
+              <CommitteeSection title="General Chair" members={committeeData.generalChair} />
 
-          {/* General Chair */}
-          <CommitteeSection title="General Chair" members={committeeData.generalChair} />
+              {/* General Co-Chairs */}
+              <CommitteeSection title="General Co-Chairs" members={committeeData.generalCoChairs} />
 
-          {/* General Co-Chairs */}
-          <CommitteeSection title="General Co-Chairs" members={committeeData.generalCoChairs} />
+              {/* Publication / Finance / Publicity */}
+              <div className="committee-chairs-grid committee-chairs-grid--3col">
+                <div className="committee-chairs-item">
+                  <CommitteeSection title="Publication Chair" members={committeeData.publicationChairs} />
+                </div>
+                <div className="committee-chairs-item">
+                  <CommitteeSection title="Finance Chair" members={committeeData.financeChair} />
+                </div>
+                <div className="committee-chairs-item">
+                  <CommitteeSection title="Publicity Chair" members={committeeData.publicityChair} />
+                </div>
+              </div>
 
-          {/* Publication / Finance / Publicity */}
-          <div className="committee-chairs-grid committee-chairs-grid--3col">
-            <div className="committee-chairs-item">
-              <CommitteeSection title="Publication Chair" members={committeeData.publicationChairs} />
+              {/* Technical Program Committee Chair + Executive Committee Chair */}
+              <div className="committee-chairs-grid committee-chairs-grid--2col">
+                <div className="committee-chairs-item">
+                  <CommitteeSection title="Technical Program Committee Chair" members={committeeData.technicalProgramChair} />
+                </div>
+                <div className="committee-chairs-item">
+                  <CommitteeSection title="Executive Committee Chair" members={committeeData.executiveChair} />
+                </div>
+              </div>
+
+              {/* Distinguished Academic Advisory Council */}
+              <CommitteeSection title="Distinguished Academic Advisory Council" members={committeeData.advisoryCouncil} />
+            </>
+          )}
+
+          {/* ── WORKING & ADDITIONAL COMMITTEES: ANNOUNCED SOON ── */}
+          {!hasTextMembers && (
+            <div className="p-8 bg-gradient-to-r from-slate-50 via-blue-50/30 to-slate-50 border border-blue-100/80 rounded-2xl text-center my-10 shadow-sm">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50 text-[#c0392b] border border-red-200/60 text-xs font-extrabold uppercase tracking-wider rounded-full mb-3">
+                <i className="fa-solid fa-clock"></i> Announced Soon
+              </span>
+              <h3 className="text-xl font-bold text-[#1a1f5e] font-heading">
+                Working Committee &amp; International Advisory Members
+              </h3>
+              <p className="text-sm text-gray-600 max-w-2xl mx-auto mt-2 leading-relaxed">
+                The departmental working committees, peer-review panels, track chairs, and international advisory board members for IC-AISET-2027 are currently being reconstituted and will be announced soon.
+              </p>
+              <div className="mt-4 pt-3 border-t border-blue-100/60 flex items-center justify-center gap-2 text-xs text-gray-500 font-semibold">
+                <i className="fa-solid fa-envelope text-[#016698]"></i> For committee inquiries: <a href="mailto:icaiset@medicaps.ac.in" className="text-[#016698] font-bold hover:underline">icaiset@medicaps.ac.in</a>
+              </div>
             </div>
-            <div className="committee-chairs-item">
-              <CommitteeSection title="Finance Chair" members={committeeData.financeChair} />
-            </div>
-            <div className="committee-chairs-item">
-              <CommitteeSection title="Publicity Chair" members={committeeData.publicityChair} />
-            </div>
-          </div>
-
-          {/* Technical Program Committee Chair + Executive Committee Chair */}
-          <div className="committee-chairs-grid committee-chairs-grid--2col">
-            <div className="committee-chairs-item">
-              <CommitteeSection title="Technical Program Committee Chair" members={committeeData.technicalProgramChair} />
-            </div>
-            <div className="committee-chairs-item">
-              <CommitteeSection title="Executive Committee Chair" members={committeeData.executiveChair} />
-            </div>
-          </div>
-
-          {/* Distinguished Academic Advisory Council (Preserving all photos) */}
-          <CommitteeSection title="Distinguished Academic Advisory Council" members={committeeData.advisoryCouncil || committeeData.ieeeMPSection} />
+          )}
 
           {/* ── DISTINGUISHED SPEAKER CATEGORIES (DOCX Section 8) ── */}
           <div className="my-12 p-8 bg-gradient-to-r from-slate-50 to-blue-50/40 rounded-2xl border border-blue-100 shadow-sm">
@@ -97,70 +133,82 @@ const ProgrameComitte = memo(() => {
             </div>
           </div>
 
-          <div className="committee-divider-wrap">
-            <span className="committee-divider-line" />
-          </div>
-
-          {/* ── TEXT-ONLY SECTIONS ── */}
-          <div className="committee-text-panel">
-            <div className="committee-text-inner">
-
-              {/* Left Panel */}
-              <div className="committee-text-left">
-                <div className="committee-subsection">
-                  <h3 className="committee-sub-title">Program Chair</h3>
-                  <div className="committee-list">
-                    {programChair.map((element) => (
-                      <p className="committee-list-item" key={element}>
-                        <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
-                        {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
-                        {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="committee-subsection">
-                  <h3 className="committee-sub-title">Working Committee</h3>
-                  <div className="committee-working-grid">
-                    {workingCommittee.map((element) => (
-                      <p className="committee-list-item committee-list-item--sm" key={element}>
-                        <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
-                        {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
-                        {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+          {/* ── TEXT-ONLY SECTIONS (Dynamically renders when populated) ── */}
+          {hasTextMembers && (
+            <>
+              <div className="committee-divider-wrap">
+                <span className="committee-divider-line" />
               </div>
 
-              {/* Right Panel */}
-              <div className="committee-text-right">
-                <h3 className="committee-sub-title">International Advisory Committee</h3>
-                <div className="committee-advisory-grid">
-                  <div className="committee-list">
-                    {internationalAdvisoryCommittee1.map((element) => (
-                      <p className="committee-list-item committee-list-item--sm" key={element}>
-                        <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
-                        {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
-                        {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
-                      </p>
-                    ))}
+              <div className="committee-text-panel">
+                <div className="committee-text-inner">
+
+                  {/* Left Panel */}
+                  <div className="committee-text-left">
+                    {programChair && programChair.length > 0 && (
+                      <div className="committee-subsection">
+                        <h3 className="committee-sub-title">Program Chair</h3>
+                        <div className="committee-list">
+                          {programChair.map((element) => (
+                            <p className="committee-list-item" key={element}>
+                              <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
+                              {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
+                              {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {workingCommittee && workingCommittee.length > 0 && (
+                      <div className="committee-subsection">
+                        <h3 className="committee-sub-title">Working Committee</h3>
+                        <div className="committee-working-grid">
+                          {workingCommittee.map((element) => (
+                            <p className="committee-list-item committee-list-item--sm" key={element}>
+                              <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
+                              {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
+                              {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="committee-list">
-                    {internationalAdvisoryCommittee2.map((element) => (
-                      <p className="committee-list-item committee-list-item--sm" key={element}>
-                        <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
-                        {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
-                        {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
-                      </p>
-                    ))}
+
+                  {/* Right Panel */}
+                  <div className="committee-text-right">
+                    {(internationalAdvisoryCommittee1?.length > 0 || internationalAdvisoryCommittee2?.length > 0) && (
+                      <>
+                        <h3 className="committee-sub-title">International Advisory Committee</h3>
+                        <div className="committee-advisory-grid">
+                          <div className="committee-list">
+                            {internationalAdvisoryCommittee1.map((element) => (
+                              <p className="committee-list-item committee-list-item--sm" key={element}>
+                                <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
+                                {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
+                                {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
+                              </p>
+                            ))}
+                          </div>
+                          <div className="committee-list">
+                            {internationalAdvisoryCommittee2.map((element) => (
+                              <p className="committee-list-item committee-list-item--sm" key={element}>
+                                <span className="committee-name-highlight">{doMyTask(element)[0]}</span>
+                                {doMyTask(element)[1] ? `, ${doMyTask(element)[1]}` : ''}
+                                {doMyTask(element)[2] ? ` ${doMyTask(element)[2]}` : ''}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
+
                 </div>
               </div>
-
-            </div>
-          </div>
+            </>
+          )}
 
         </div>
       </div>

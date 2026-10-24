@@ -106,8 +106,16 @@ export const venueInfo = {
 };
 
 // ──────────────────────────────────────────────
-// Committee Members  (photos from DOCX)
+// Committee Members & Leadership
 // ──────────────────────────────────────────────
+export const committeeStatus = {
+  isAnnounced: true,
+  statusBadge: 'Organizing Leadership',
+  title: 'Committees & Academic Advisory Council',
+  additionalMembersNote: 'Working Committee & Additional Advisory Members will be announced soon.',
+  inquiryEmail: 'icaiset@medicaps.ac.in',
+};
+
 export const committeeData = {
   chiefPatron: [
     { name: 'Shri R.C. Mittal', designation: 'Chancellor', image: committeePhotos.rcMittal },
@@ -151,208 +159,13 @@ export const committeeData = {
     { name: 'Prof. M P S Chawla', designation: 'Distinguished Academic Advisor', image: committeePhotos.mpSChawla },
     { name: 'Prof. Durgesh Kumar Mishra', designation: 'Distinguished Academic Advisor', image: committeePhotos.durgeshMishra },
   ],
-  ieeeMPSection: [
-    { name: 'Prof. G S Tomar', designation: 'Distinguished Academic Advisor', image: committeePhotos.gsTomar_mp },
-    { name: 'Prof. Manish Dixit', designation: 'Distinguished Academic Advisor', image: committeePhotos.manishDixit },
-    { name: 'Prof. Jinendra Agrawal', designation: 'Distinguished Academic Advisor', image: committeePhotos.jinendraAgrawal },
-    { name: 'Prof. Manmath Badapanda', designation: 'Distinguished Academic Advisor', image: committeePhotos.manmathBadapanda },
-    { name: 'Prof. M P S Chawla', designation: 'Distinguished Academic Advisor', image: committeePhotos.mpSChawla },
-    { name: 'Prof. Durgesh Kumar Mishra', designation: 'Distinguished Academic Advisor', image: committeePhotos.durgeshMishra },
-  ],
 };
 
-// ──────────────────────────────────────────────
-// Advisory / Working Committee  (text only)
-// ──────────────────────────────────────────────
-export const programChair = [
-  'Prof. P. Siluvainathan',
-  'Prof. V. Ganeshan',
-  'Prof. Abbas Ali Koser',
-  'Prof. Shilpa Tripathi',
-  'Prof. Vipin Sharma',
-  'Prof. Sachin Solanki',
-  'Prof. Vidhya Samad Barpha',
-  'Prof. Vinit Gupta',
-  'Prof. Santosh S. Raghuwanshi',
-  'Prof. Chitresh Nayak',
-  'Prof. Chayan Gupta',
-  'Prof. R. K. Shukla',
-  'Prof. Ravindra Pathak',
-];
-
-export const workingCommittee = [
-  'Prof. Manoj Kumar Rawat',
-  'Prof. Safdar Sardar Khan',
-  'Prof. Sourabh Dave',
-  'Prof. Manish Korde',
-  'Prof. Sandeep K. Mathariya',
-  'Prof. Shivani Patnaha',
-  'Prof. Kriti Joshi',
-  'Prof. Swati Vaidya',
-  'Prof. Ankita Chourasia',
-  'Prof. Rahul Nigam',
-  'Prof. Bhavana Tiwari',
-  'Prof. Digendra Singh Rathore',
-  'Prof. Devendra Singh Bais',
-  'Prof. Pankaj Malik',
-  'Prof. Pinky S. Rane',
-  'Prof. Jyotsana Goyal',
-  'Prof. Amit Goud',
-  'Prof. Chanda Chouhan',
-  'Prof. Manoranjan K Sinha',
-  'Prof. Sachin Yele',
-  'Prof. Neha Kapil',
-  'Prof. Jyoti Kukade',
-  'Prof. Rahul Singh Pawar',
-  'Prof. Dinesh Kumar Bhayal',
-  'Prof. Puja Singh',
-  'Prof. Smita Prajapati',
-  'Prof. Priya Rathore',
-  'Prof. Divya Chouhan',
-  'Prof. Mudita Dave Nagar',
-  'Prof. Lokendra Singh Songare',
-  'Prof. Trishna Panse',
-  'Prof. Ajeet Singh Rajput',
-  'Prof. Ranjeet Osari',
-  'Prof. Maya Baniya',
-  'Prof. J Angelin Blessy',
-  'Prof. Kamini Vishwakarma',
-  'Prof. Prabhat Pandey',
-  'Prof. Prithviraj Singh Chouhan',
-  'Prof. Sachin Puntambekar',
-  'Prof. Bharat Pahadiya',
-  'Prof. Sheetal Bawane',
-  'Prof. Pradeep Baniya',
-  'Prof. Dharmendra Gupta',
-  'Prof. Ashish Kumawat',
-  'Prof. Dhiraj Kumar',
-  'Prof. Hemant K Patahk',
-  'Prof. Shweta Gupta',
-  'Prof. Parag Raverkar',
-  'Prof. Jayesh Surana',
-  'Prof. Hemant Pal',
-  'Prof. Suyog Munshi',
-  'Prof. Diptanshu Pandya',
-  'Prof. Dharmendra Mangal',
-  'Prof. Rakesh Pandit',
-  'Prof. Kumar Gaurav',
-  'Prof. Mitesh Bargadiya',
-  'Prof. Gaurav Sharma',
-  'Prof. Ajaj Khan',
-  'Prof. Sachin Solanki',
-  'Prof. Nishant Shrivastava',
-  'Prof. Mohammad Mazhar',
-  'Prof. Ram Bansal',
-  'Prof. Jayesh Barve',
-  'Prof. Saurabh Jain',
-  'Prof. Mandakini Ingle',
-  'Prof. Vishal Sharma',
-  'Prof. Seema Patidar',
-  'Prof. Manish Mahajan',
-  'Prof. Govind Patidar',
-  'Prof. Sachin Yele',
-  'Prof. Anusha Jain',
-  'Prof. Shimpy Goyal',
-  'Prof. Sonal Modh',
-  'Prof. Hemlata Patel',
-  'Prof. Vinita Rathore',
-  'Prof. Margi Chhabre',
-  'Prof. Anil Patidar',
-  'Prof. Kuber Dutt Gautam',
-  'Prof. Rohit Gupta',
-  'Prof. Aayushi Bhardwaj',
-  'Prof. Nitesh Kumar Soni',
-  'Prof. Vasim Khan',
-  'Prof. Yogesh Payasi',
-  'Prof. Aditya Mandloi',
-  'Prof. Sunil Kushwaha',
-  'Prof. Hare Ram Jha',
-  'Prof. Shruti Sharma',
-  'Prof. Priyanka Dhasal',
-  'Prof. Divya Kumawat',
-  'Prof. Mahesh Patidar',
-  'Prof. Shraddha Kumar',
-  'Prof. Swati Mishra',
-  'Prof. Sagar Pandya',
-  'Prof. Varsha Sharda',
-  'Prof. Shubhrata Kanungo',
-  'Prof. Swati Tahiliani',
-  'Prof. Ankit Gupta',
-  'Prof. Ashish Shrivastav',
-  'Prof. Madan Pal Singh',
-  'Prof. Harsh Pratap Singh',
-];
-
-export const internationalAdvisoryCommittee1 = [
-  'Prof. G S Tomar, Chairperson', 'Prof. Manish Dixit, Chair Elect',
-  'Prof. Manmath Badapanda, Vice Chairperson', 'Prof. M P S Chawla, Secretary',
-  'Prof. Vijayalaxmi, Secretary & WIE Chair', 'Prof. Durgesh Kumar Mishra, Chair Computer Society ',
-  'Prof. Amit Raje, Chair PE Chapter', 'Prof. Jinendra Agrawal, TPAC Chair',
-  'Prof. Amit Ojha, MANIT Bhopal', 'Prof. Somesh Kumar, Chair SAC',
-  'Prof. Ashish Singhal, Vice-Chair SAC', 'Prof. Shaibal Mukherjee, IIT Indore',
-  'Prof. Ayan Mondal, IIT Indore', 'Prof. Kamal Kumar Sethi, Chair Web Management',
-  'Prof. Gaurav Bharti, Chair - Social Media', 'Prof. Neha Gupta, Vice Chair SIGHT',
-  'Prof. Pinku Ranjan, ABV-IIITM Gwalior', 'Prof. Manish Sawle, Vice Chair, Ethics',
-  'Prof. Ts. Dr Liu Li Li, TARUMT Malaysia', 'Prof. Ts. Dr Yip Mum Wai, TARUMT Malaysia',
-  'Prof. Ir. Lim Joo Eng, TARUMT Malaysia', 'Prof. Anurag Srivastava, WS University USA',
-  'Prof. Brij N Singh, North Dakota, USA', 'Prof. Kwang Lee, BB University USA',
-  'Prof. T K Sarkar, Syracuse University NY', 'Prof. K. P. Wang, Sydney University Australia',
-  'Prof. Rajesh Verma, VC RGPV', 'Prof. S.K. Singh, VC RTU Kota',
-  'Prof. Bharat Charan Singh, Chairman MPPU RC', 'Prof. Istovan Erlich, DE University Germany',
-  'Prof. L. Lai, City University London', 'Prof. K. N. Srivastava, ABB Sweden',
-  'Prof. Ambrish Chandra, Montreal Canada', 'Prof. Jai Govind, AII Bangkok',
-  'Prof. Fuishuan Wen, China', 'Prof. Maode Ma NTU, Singapore',
-  'Prof. Satyendra Chauhan, NIT Jaipur', 'Prof. Prabah K. Panigrahi, IIIT Indore',
-  'Prof. Jayor Singh, IIITDM Jabalpur', 'Prof. Mini S. Thomas, JMI New Delhi',
-  'Prof. Sanjay Chauhan, GU Greater Noida', 'Prof. Akansay Dwivedi, IIT Roorkee',
-  'Prof. Rhunush Kumar, IIT Indore', 'Prof. Govind Maheshwari, IET DAVV Indore',
-  'Prof. N. P. Patidar, MANIT Bhopal', 'Prof. V. Kumar, MANIT Bhopal',
-  'Prof. Shailendra Kumar Sharma, SGSITS Indore', 'Prof. H K Mahiyar, SGSITS Indore',
-  'Prof. Sunil Luthra, Director, T&L Bureau, AICTE', 'Prof. Sukanta Basu, DT, Netherlands',
-];
-
-export const internationalAdvisoryCommittee2 = [
-  'Prof. Ashwini Kumar Sharma, Graphic Era', 'Prof. Usha Chauhan, GU Greater Noida',
-  'Prof. Ajay Shankar Singh, GU Greater Noida', 'Prof. S. C. Srivastava, IIT Kanpur',
-  'Prof. J. Ram Kumar, IIT Kanpur', 'Prof. Avadhesh Kumar, PVC, GU',
-  'Prof. Akhilesh Sharma, Manipal University', 'Prof. Premanand, SU, Noida',
-  'Prof. Ravi Panwar, IIT BHU', 'Prof. Ranvir S. Panwar, NIMS Chandigarh',
-  'Prof. Satish Sharma, MNIT Jaipur', 'Prof. Ripal Ranpura, Atmiya University',
-  'Prof. Shailesh Tiwari, ABESEC Ghaziabad', 'Prof. N. P. Padhy, IIT Rorkee',
-  'Prof. Vijay Kumar, University of Missouri', 'Prof. Manish Jambwal, Director, NATRAX Indore',
-  'Prof. Shailesh Mishra, AVP, YASH technologies', 'Prof. Ashok Bhansali, Dean GLA University',
-  'Prof. Subhakalshmi Kher, IGWA State University', 'Prof. Rajeev Tripathi, VC RGPV',
-  'Prof. S.L. Maskara, Retd. Prof. IIT Kharagpur', 'Prof. O.P Vyas, IIIT Allahabad',
-  'Prof. Subrat Sarangi, IIT Kharagpur', 'Prof. B.K. Saini, Vice Chairman SOA University',
-  'Prof. Akhilesh Pandey, VC Vikram University', 'Prof. C.D. Patil, Professor, UEC Ujjain',
-  'Prof. Aditya Trivedi, IIITM Gwalior', 'Prof. P. Tapaswi, IIITM Gwalior',
-  'Prof. Anupam Shukla, IIITM Gwalior', 'Prof. R.C. Joshi, IIT Roorkee',
-  'Prof. Lovi Raj Gupta, Pro Vice Chancellor, LPU', 'Prof. Nitin Upadhye, University of Modern Sciences',
-  'Prof. Andrey Kuzmin, Man. Editor, BH Publishers', 'Prof. R K Pandit, Vice Chancellor, MITS Gwalior',
-  'Prof. Vivek Shrivastava, NIT Uttarakhand', 'Prof. Kalyan Bandopadhyaya, IIT Kharagpur',
-  'Prof. Santi Prasad Maity, Professor, IIEST', 'Prof. Akhesa Tiwary, MIT Gwalior',
-  'Prof. Sanjeev Tarlekar, IET DAVV', 'Prof. Abhay Dubey, Professor, DAVV',
-  'Prof. N.S. Choudhary, IIT Indore', 'Prof. P. Abdullah, CUSAT Kerala',
-  'Prof. Abdul Wahid, MACU Hyderabad', 'Prof. D. Kannan, CUSAT Kerala',
-  'Prof. Vargheese Paul, CUSAT Kerala', 'Prof. Bhammejit Singh, Professor NIT Kurukshetra',
-  'Prof. Sukumar Mishra, IIT Delhi', 'Prof. Sanjeevkumar Padmanaban, SEU Norway',
-  'Prof. Biplab Sikdar, NUS Singapore', 'Prof. Mohammad Khalid, Sunway University',
-  'Prof. Dr. Ilhami Colak, Gazi University Ankara', 'Prof. Firoz Alam, RMIT University Australia',
-  'Prof. Anant Dubey, Curtin University Australia', 'Prof. Ginbar Ensermu Geleta, Wollega University',
-  'Prof. M. L. Kolhe, University of Agder, Norway', 'Prof. Anand Parey, IIT Indore',
-  'Prof. Deepa Mitra, Qatar University', 'Prof. Asheesh Singh, MNNIT Allahabad',
-  'Prof. S. K. Singh, IIIT Allahabad', 'Prof. Anil Gupta, Secretary KSI Indore',
-  'Prof. Amrit Kumar Roy, NIT Hamirpur', 'Prof. Mayur Shirish Jain, IIT Indore',
-  'Prof. R N Singh, DAVV Indore', 'Prof. Amit Pal, DTU Delhi',
-  'Prof. Sagar Raji, DTU Delhi', 'Prof. Jatinder Kumar, NIT Kurukshetra',
-  'Prof. Shweta Rathi, NIT Kurukshetra', 'Prof. RK Saksat, Professor IIT BHU',
-  'Prof. (Dr.) Arun Prasad, Professor, IIT (BHU)', 'Prof. (Dr.) Ankit Gupta, Associate Professor, IIT (BHU)',
-  'Prof. (Dr.) K.K. Panahi, Professor, IIT (BHU)', 'Prof. (Dr.) Sandeep Choudhary, Professor, IIT Indore',
-  'Prof. (Dr.) Neelima Satyam, Professor, IIT Indore', 'Prof. (Dr.) Ravi Sharma, Professor, NIT Hamirpur',
-  'Prof. (Dr.) R.B. Data, Professor, NIT Hamirpur',
-  'Dr. Anurag Surana, Sr. GM Manager, PATH Mitra Indore',
-  'Er. Rahul Goel, Zonal head & Vice president, Ultratech Cement Ltd',
-];
+// Text-only advisory & working committees (Announced Soon / to be provided later)
+export const programChair = [];
+export const workingCommittee = [];
+export const internationalAdvisoryCommittee1 = [];
+export const internationalAdvisoryCommittee2 = [];
 
 // ──────────────────────────────────────────────
 // Previous Conferences  (Medi-Caps University Conference Legacy)
@@ -501,9 +314,38 @@ export const publicationPlan = [
 export const speakers = [];
 
 // ──────────────────────────────────────────────
-// Gallery Images
+// Gallery Images (Authentic Conference Highlights)
 // ──────────────────────────────────────────────
-export const galleryImages = [];
+export const galleryImages = [
+  {
+    id: 1,
+    title: 'Delegates, Faculty & Scholars at Medi-Caps Campus',
+    category: 'Campus Gathering',
+    desc: 'Distinguished participants, faculty, and academic leadership gathered at the Medi-Caps University campus.',
+    assetKey: 'confDelegatesGroup',
+  },
+  {
+    id: 2,
+    title: 'Official Release of Conference Proceedings',
+    category: 'Proceedings Release',
+    desc: 'University dignitaries and keynote guests formally unveiling the peer-reviewed conference proceedings.',
+    assetKey: 'confProceedingsRelease',
+  },
+  {
+    id: 3,
+    title: 'Keynote Speaker Felicitation & Citation',
+    category: 'Dignitaries & Honors',
+    desc: 'Conferring honors and presenting conference citation to international keynote speaker.',
+    assetKey: 'confKeynoteFelicitation',
+  },
+  {
+    id: 4,
+    title: 'Research Proceedings Unveiling Ceremony',
+    category: 'Stage Ceremony',
+    desc: 'Inaugural stage ceremony presenting the official publication of research proceedings.',
+    assetKey: 'confBookUnveiling',
+  },
+];
 
 // ──────────────────────────────────────────────
 // Paper Submission Content
@@ -714,6 +556,7 @@ export const conferenceData = {
   socialLinks,
   footerContent,
   venueInfo,
+  committeeStatus,
   committeeData,
   programChair,
   workingCommittee,
