@@ -4,10 +4,7 @@ import Nav from '../../components/layout/Navbar/Navbar'
 import Footer from '../../components/layout/Footer/Footer'
 import { Link } from 'react-router-dom'
 import StartHero from '../../components/sections/StartHero/StartHero'
-import ConferenceCard from '../../components/common/ConferenceCard'
-import { useCount } from '../../context';
 import { 
-    previousConferences, 
     importantDates, 
     doctoralColloquium,
     publicationPlan 
@@ -245,27 +242,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ════ 6. PREVIOUS CONFERENCES ════ */}
-            <section className="hp-prev">
-                <div className="hp-container">
-                    <span className="hp-eyebrow">Legacy</span>
-                    <h2 className="hp-heading bodyFont2">University Conference Legacy</h2>
-                    <div className="hp-heading-bar" />
-                    <div className="hp-prev-grid">
-                        {previousConferences.map((conf) => (
-                            <ConferenceCard
-                                key={conf.id}
-                                title={conf.title}
-                                year={conf.year}
-                                link={conf.link}
-                                image={assets[conf.image]}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ════ 7. PAPER SUBMISSION CTA ════ */}
+            {/* ════ 6. PAPER SUBMISSION CTA ════ */}
             <section className="hp-cta">
                 <div className="hp-container hp-cta-inner">
                     <div className="hp-cta-text">
