@@ -112,7 +112,7 @@ export const committeeStatus = {
   isAnnounced: true,
   statusBadge: 'Organizing Leadership',
   title: 'Committees & Academic Advisory Council',
-  additionalMembersNote: 'Working Committee & Additional Advisory Members will be announced soon.',
+  additionalMembersNote: 'Distinguished Academic Advisory Council, Working Committee & Additional Advisory Members will be announced soon.',
   inquiryEmail: 'icaiset@medicaps.ac.in',
 };
 
@@ -152,12 +152,13 @@ export const committeeData = {
     { name: 'Prof. Ashish Sharma', designation: 'Executive Committee Chair', image: committeePhotos.ashishSharma },
   ],
   advisoryCouncil: [
-    { name: 'Prof. G S Tomar', designation: 'Distinguished Academic Advisor', image: committeePhotos.gsTomar_mp },
-    { name: 'Prof. Manish Dixit', designation: 'Distinguished Academic Advisor', image: committeePhotos.manishDixit },
-    { name: 'Prof. Jinendra Agrawal', designation: 'Distinguished Academic Advisor', image: committeePhotos.jinendraAgrawal },
-    { name: 'Prof. Manmath Badapanda', designation: 'Distinguished Academic Advisor', image: committeePhotos.manmathBadapanda },
-    { name: 'Prof. M P S Chawla', designation: 'Distinguished Academic Advisor', image: committeePhotos.mpSChawla },
-    { name: 'Prof. Durgesh Kumar Mishra', designation: 'Distinguished Academic Advisor', image: committeePhotos.durgeshMishra },
+    // Distinguished Academic Advisory Council - Announced Soon
+    // { name: 'Prof. G S Tomar', designation: 'Distinguished Academic Advisor', image: committeePhotos.gsTomar_mp },
+    // { name: 'Prof. Manish Dixit', designation: 'Distinguished Academic Advisor', image: committeePhotos.manishDixit },
+    // { name: 'Prof. Jinendra Agrawal', designation: 'Distinguished Academic Advisor', image: committeePhotos.jinendraAgrawal },
+    // { name: 'Prof. Manmath Badapanda', designation: 'Distinguished Academic Advisor', image: committeePhotos.manmathBadapanda },
+    // { name: 'Prof. M P S Chawla', designation: 'Distinguished Academic Advisor', image: committeePhotos.mpSChawla },
+    // { name: 'Prof. Durgesh Kumar Mishra', designation: 'Distinguished Academic Advisor', image: committeePhotos.durgeshMishra },
   ],
 };
 

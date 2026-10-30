@@ -23,8 +23,7 @@ const ProgrameComitte = memo(() => {
     (committeeData.chiefPatron && committeeData.chiefPatron.length > 0) ||
     (committeeData.patron && committeeData.patron.length > 0) ||
     (committeeData.generalChair && committeeData.generalChair.length > 0) ||
-    (committeeData.generalCoChairs && committeeData.generalCoChairs.length > 0) ||
-    (committeeData.advisoryCouncil && committeeData.advisoryCouncil.length > 0)
+    (committeeData.generalCoChairs && committeeData.generalCoChairs.length > 0)
   );
 
   const hasTextMembers = Boolean(
@@ -85,22 +84,24 @@ const ProgrameComitte = memo(() => {
                 </div>
               </div>
 
-              {/* Distinguished Academic Advisory Council */}
-              <CommitteeSection title="Distinguished Academic Advisory Council" members={committeeData.advisoryCouncil} />
+              {/* Distinguished Academic Advisory Council (if populated) */}
+              {committeeData.advisoryCouncil && committeeData.advisoryCouncil.length > 0 && (
+                <CommitteeSection title="Distinguished Academic Advisory Council" members={committeeData.advisoryCouncil} />
+              )}
             </>
           )}
 
-          {/* ── WORKING & ADDITIONAL COMMITTEES: ANNOUNCED SOON ── */}
+          {/* ── DISTINGUISHED ACADEMIC ADVISORY COUNCIL & WORKING COMMITTEES: ANNOUNCED SOON ── */}
           {!hasTextMembers && (
             <div className="p-8 bg-gradient-to-r from-slate-50 via-blue-50/30 to-slate-50 border border-blue-100/80 rounded-2xl text-center my-10 shadow-sm">
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50 text-[#c0392b] border border-red-200/60 text-xs font-extrabold uppercase tracking-wider rounded-full mb-3">
                 <i className="fa-solid fa-clock"></i> Announced Soon
               </span>
               <h3 className="text-xl font-bold text-[#1a1f5e] font-heading">
-                Working Committee &amp; International Advisory Members
+                Distinguished Academic Advisory Council &amp; Working Committees
               </h3>
               <p className="text-sm text-gray-600 max-w-2xl mx-auto mt-2 leading-relaxed">
-                The departmental working committees, peer-review panels, track chairs, and international advisory board members for IC-AISET-2027 are currently being reconstituted and will be announced soon.
+                The Distinguished Academic Advisory Council, departmental working committees, peer-review panels, track chairs, and international advisory board members for IC-AISET-2027 are currently being finalized and will be announced soon.
               </p>
               <div className="mt-4 pt-3 border-t border-blue-100/60 flex items-center justify-center gap-2 text-xs text-gray-500 font-semibold">
                 <i className="fa-solid fa-envelope text-[#016698]"></i> For committee inquiries: <a href="mailto:icaiset@medicaps.ac.in" className="text-[#016698] font-bold hover:underline">icaiset@medicaps.ac.in</a>
