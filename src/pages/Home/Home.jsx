@@ -4,6 +4,7 @@ import Nav from '../../components/layout/Navbar/Navbar'
 import Footer from '../../components/layout/Footer/Footer'
 import { Link } from 'react-router-dom'
 import StartHero from '../../components/sections/StartHero/StartHero'
+import { useCount } from '../../context';
 import { 
     importantDates, 
     doctoralColloquium,
