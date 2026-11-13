@@ -53,6 +53,16 @@ import mpSChawla from '../assets/images/committee/mpSChawla.jpeg';
 import durgeshMishra from '../assets/images/committee/durgeshMishra.jpeg';
 import ashishSharma from '../assets/images/committee/ashishSharma.jpeg';
 
+// --- Advisory Committee Photos ---
+import debasishMaitra from '../assets/images/committee/debasishMaitra.jpg';
+import ashishSadh from '../assets/images/committee/ashishSadh.jpg';
+import emmanuelAwuor from '../assets/images/committee/emmanuelAwuor.jpg';
+import amiyaKumar from '../assets/images/committee/amiyaKumar.jpg';
+import madhuJasola from '../assets/images/committee/madhuJasola.png';
+import divyaSinghal from '../assets/images/committee/divyaSinghal.jpg';
+import harshadPurandare from '../assets/images/committee/harshadPurandare.jpg';
+import slGupta from '../assets/images/committee/slGupta.jpg';
+
 // --- Documents ---
 // PDFs are served from public/ to avoid webpack corrupting binary files.
 const brochurePDF = `${process.env.PUBLIC_URL}/documents/ICAISET-2027-Brochure.pdf`;
@@ -120,4 +130,12 @@ export const committeePhotos = {
   mpSChawla,
   durgeshMishra,
   ashishSharma,
+  debasishMaitra,
+  ashishSadh,
+  emmanuelAwuor,
+  amiyaKumar,
+  madhuJasola,
+  divyaSinghal,
+  harshadPurandare,
+  slGupta,
 };
