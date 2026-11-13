@@ -110,9 +110,9 @@ export const venueInfo = {
 // ──────────────────────────────────────────────
 export const committeeStatus = {
   isAnnounced: true,
-  statusBadge: 'Organizing Leadership',
-  title: 'Committees & Academic Advisory Council',
-  additionalMembersNote: 'Distinguished Academic Advisory Council, Working Committee & Additional Advisory Members will be announced soon.',
+  statusBadge: 'Organizing Leadership & Advisory Committee',
+  title: 'Committees & Advisory Board',
+  additionalMembersNote: 'Departmental working committees and track chairs will be announced soon.',
   inquiryEmail: 'icaiset@medicaps.ac.in',
 };
 
@@ -151,14 +151,89 @@ export const committeeData = {
   executiveChair: [
     { name: 'Prof. Ashish Sharma', designation: 'Executive Committee Chair', image: committeePhotos.ashishSharma },
   ],
+  advisoryCommittee: [
+    {
+      name: 'Prof. Debasish Maitra',
+      designation: 'Professor, IIM Indore',
+      image: committeePhotos.debasishMaitra,
+    },
+    {
+      name: 'Prof. Ashish Sadh',
+      designation: 'Professor, IIM Indore',
+      image: committeePhotos.ashishSadh,
+    },
+    {
+      name: 'Prof. Emmanuel Awuor',
+      designation: 'Professor, Management University of Africa, Nairobi, Kenya',
+      image: committeePhotos.emmanuelAwuor,
+    },
+    {
+      name: 'Prof. Amiya Kumar Mohapatra',
+      designation: 'Professor & Dean (Research), Jaipuria Institute of Management, Indore',
+      image: committeePhotos.amiyaKumar,
+    },
+    {
+      name: 'Ms. Madhu Jasola',
+      designation: 'Consultant, Apex Services International, New Delhi',
+      image: committeePhotos.madhuJasola,
+    },
+    {
+      name: 'Prof. Divya Singhal',
+      designation: 'Professor, Goa Institute of Management',
+      image: committeePhotos.divyaSinghal,
+    },
+    {
+      name: 'Mr. Harshad Purandare',
+      designation: 'Product Manager, Google Research',
+      image: committeePhotos.harshadPurandare,
+    },
+    {
+      name: 'Prof. S. L. Gupta',
+      designation: 'Professor, Birla Institute of Technology, Noida',
+      image: committeePhotos.slGupta,
+    },
+  ],
   advisoryCouncil: [
-    // Distinguished Academic Advisory Council - Announced Soon
-    // { name: 'Prof. G S Tomar', designation: 'Distinguished Academic Advisor', image: committeePhotos.gsTomar_mp },
-    // { name: 'Prof. Manish Dixit', designation: 'Distinguished Academic Advisor', image: committeePhotos.manishDixit },
-    // { name: 'Prof. Jinendra Agrawal', designation: 'Distinguished Academic Advisor', image: committeePhotos.jinendraAgrawal },
-    // { name: 'Prof. Manmath Badapanda', designation: 'Distinguished Academic Advisor', image: committeePhotos.manmathBadapanda },
-    // { name: 'Prof. M P S Chawla', designation: 'Distinguished Academic Advisor', image: committeePhotos.mpSChawla },
-    // { name: 'Prof. Durgesh Kumar Mishra', designation: 'Distinguished Academic Advisor', image: committeePhotos.durgeshMishra },
+    {
+      name: 'Prof. Debasish Maitra',
+      designation: 'Professor, IIM Indore',
+      image: committeePhotos.debasishMaitra,
+    },
+    {
+      name: 'Prof. Ashish Sadh',
+      designation: 'Professor, IIM Indore',
+      image: committeePhotos.ashishSadh,
+    },
+    {
+      name: 'Prof. Emmanuel Awuor',
+      designation: 'Professor, Management University of Africa, Nairobi, Kenya',
+      image: committeePhotos.emmanuelAwuor,
+    },
+    {
+      name: 'Prof. Amiya Kumar Mohapatra',
+      designation: 'Professor & Dean (Research), Jaipuria Institute of Management, Indore',
+      image: committeePhotos.amiyaKumar,
+    },
+    {
+      name: 'Ms. Madhu Jasola',
+      designation: 'Consultant, Apex Services International, New Delhi',
+      image: committeePhotos.madhuJasola,
+    },
+    {
+      name: 'Prof. Divya Singhal',
+      designation: 'Professor, Goa Institute of Management',
+      image: committeePhotos.divyaSinghal,
+    },
+    {
+      name: 'Mr. Harshad Purandare',
+      designation: 'Product Manager, Google Research',
+      image: committeePhotos.harshadPurandare,
+    },
+    {
+      name: 'Prof. S. L. Gupta',
+      designation: 'Professor, Birla Institute of Technology, Noida',
+      image: committeePhotos.slGupta,
+    },
   ],
 };
 
